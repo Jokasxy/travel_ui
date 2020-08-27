@@ -1,8 +1,7 @@
 import React from 'react';
-import L, { latLng } from 'leaflet';
+import { latLng } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import icon from 'leaflet/dist/images/marker-icon.png';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
 import MapScreen from '../screens/mapScreen';
 import { Context } from '../state/stateProvider';
 import { SET_CURRENT_LOCATION, SET_LOCATIONS, ERROR } from '../state/reducer';
@@ -10,12 +9,7 @@ import { setService, service } from '../service';
 import localizationEN from '../localization/localizationEN';
 import LocationsResponse from '../types/locationsResponse';
 
-const MarkerIcon = L.icon({
-    iconUrl: icon,
-    shadowUrl: iconShadow
-});
-  
-L.Marker.prototype.options.icon = MarkerIcon;
+
 
 const MapContainer = () => {
     const { state, dispatch } = React.useContext(Context);
